@@ -15,9 +15,12 @@ class NavigatorViewController: UITabBarController {
         // set up the tab items
         let feedViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         
-        feedViewController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "tray.2"), tag: 0)
+        let searchViewController = UINavigationController(rootViewController: SearchViewController())
         
-        self.viewControllers = [feedViewController]
+        feedViewController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "tray.2"), tag: 0)
+        searchViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        
+        self.viewControllers = [feedViewController, searchViewController]
     }
     
 

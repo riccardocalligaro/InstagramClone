@@ -21,7 +21,6 @@ class FeedViewController: UICollectionViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<FeedSection, FeedItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<FeedSection, FeedItem>
     
-    
     private lazy var dataSource = makeDataSource()
     
     let postCellReuseIdentifier = "postCell"
@@ -59,7 +58,7 @@ class FeedViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         var snapshot = Snapshot()
         snapshot.appendSections([.posts])
-        snapshot.appendItems([FeedItem(title: "Hello world")])
+        snapshot.appendItems([FeedItem(title: "Hello world"), FeedItem(title: "Hello world 2"), FeedItem(title: "Hello world 3")])
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
