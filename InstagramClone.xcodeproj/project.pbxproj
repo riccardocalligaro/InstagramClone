@@ -20,6 +20,8 @@
 		8BC1442C2595EF16006095CC /* NavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1442B2595EF16006095CC /* NavigatorViewController.swift */; };
 		8BC144312595EF18006095CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC144302595EF18006095CC /* Assets.xcassets */; };
 		8BC144342595EF18006095CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC144322595EF18006095CC /* LaunchScreen.storyboard */; };
+		8BE2472525AA0917006A73D8 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2472425AA0917006A73D8 /* BaseTextField.swift */; };
+		8BE2472D25AA2781006A73D8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2472C25AA2781006A73D8 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		8BC144302595EF18006095CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BC144332595EF18006095CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BC144352595EF18006095CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BE2472425AA0917006A73D8 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		8BE2472C25AA2781006A73D8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		8B58728D25A21BDF00A205B5 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				8BE2472C25AA2781006A73D8 /* RegistrationViewController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 		8BC1443E2595EF66006095CC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8BE2472325AA08DE006A73D8 /* Base */,
 				8B58728E25A21BE700A205B5 /* Authentication */,
 				8B5942B52597A66500277D6D /* Extensions */,
 				8B41A5082595FD850086CAA3 /* Profile */,
@@ -190,6 +196,14 @@
 				8BC1442B2595EF16006095CC /* NavigatorViewController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8BE2472325AA08DE006A73D8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8BE2472425AA0917006A73D8 /* BaseTextField.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +279,10 @@
 				8BC1442C2595EF16006095CC /* NavigatorViewController.swift in Sources */,
 				8BC144282595EF16006095CC /* AppDelegate.swift in Sources */,
 				8B41A4F22595F7D00086CAA3 /* FeedViewController.swift in Sources */,
+				8BE2472D25AA2781006A73D8 /* RegistrationViewController.swift in Sources */,
 				8BC1442A2595EF16006095CC /* SceneDelegate.swift in Sources */,
 				8B5942B72597A67200277D6D /* Extensions.swift in Sources */,
+				8BE2472525AA0917006A73D8 /* BaseTextField.swift in Sources */,
 				8B41A4FB2595F7EC0086CAA3 /* NotificationsViewController.swift in Sources */,
 				8B41A5022595F80D0086CAA3 /* ProfileViewController.swift in Sources */,
 				8B41A4F82595F7E50086CAA3 /* ImageSelectorViewController.swift in Sources */,
