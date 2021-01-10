@@ -9,9 +9,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
-
-    
     // MARK: - Properties
     private let logoView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "instagram_logo"))
@@ -22,21 +19,16 @@ class LoginViewController: UIViewController {
     private let emailTextField = BaseTextField(placeholder: "Email", type: .emailAddress)
     private let passwordTextField = BaseTextField(placeholder: "Password", type: .password, secure: true)
     
+    
     private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemPurple
-        button.layer.cornerRadius = 8
-        button.setHeight(50)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        let button = AuthenticationButton(title: "Login")
         return button
     }()
     
     let registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Don't have an account? ", secondPart: "Sign up")
-
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -46,9 +38,6 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    
- 
-
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -58,8 +47,30 @@ class LoginViewController: UIViewController {
     }
     
     
+    // MARK: - Actions
+    @objc func handleShowSignUp() {
+        if let vcs = self.navigationController?.viewControllers {
+            if vcs.count >= 2 {
+                let previousVC = vcs[vcs.count - 2]
+                if previousVC is RegistrationViewController {
+                    navigationController?.popViewController(animated: true)
+                } else {
+                    goToRegistration()
+                }
+            } else {
+                goToRegistration()
+            }
+        }
+    }
+    
+    private func goToRegistration() {
+        let vc = RegistrationViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     // MARK: - Helpers
-
+    
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
         
@@ -67,12 +78,7 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         
         // create the background layer
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        
-        gradient.frame = view.frame
+        applyGradientBackground()
         
         // instagram logo
         view.addSubview(logoView)
@@ -92,5 +98,5 @@ class LoginViewController: UIViewController {
         registerButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
         
     }
-
+    
 }
